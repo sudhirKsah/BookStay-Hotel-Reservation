@@ -1,0 +1,158 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.body-margin {
+    margin: 5px 50px 0px 50px;
+} 
+
+#account-icon {
+    font-size: 1.5em; 
+    border: 1px solid #e3e2de;
+    border-radius: 50px;
+}
+
+#account-icon-click {
+    display: none;
+    position: absolute;
+    background-color: white;
+    margin: 5px 10px 0px 0px;
+    box-shadow: 1px 1px 15px -5px grey;
+    border-radius: 15px;
+}
+
+#navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px ;
+    z-index: 1000;
+    background-color: white;
+}
+
+
+#find-hotel {
+    width: 75%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    background-color: #f7f7f7;
+    border: 1px solid #dddddd;
+    border-radius: 24px; 
+    overflow: hidden;
+    align-items: center;
+    font-size: 13px;
+}
+
+#sticky-form{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+    background-color: white;
+}
+
+#horizontal-line {
+    border: 1px solid grey;
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+    position: sticky;
+    top: 160px;
+    z-index: 999;
+    background-color: white;
+}
+
+#find-hotel .mb-3 {
+    margin: 10px auto;
+}
+
+#find-hotel .form-control {
+    flex: 1;
+    border: none; 
+    border-radius: 24px; 
+}
+
+#find-hotel .btn {
+    border: none; 
+    background-color: #FF5A5F; 
+    color: #fff;
+    border-radius: 24px;
+    height: 50px;
+    margin: 15px 10px 0 0;
+}
+
+label {
+    margin-left: 50px;
+}
+
+
+.vertical-separator {
+    display: inline-block;
+    height: 50px;
+    width: 2px;
+    vertical-align: center;
+    margin: 10px 5px 0px 5px;
+    background-color: #e3e2de;
+}
+
+.d-block {
+    display: block;
+    height: 250px;
+    widht: 250px;
+}
+
+.carousel-indicators button {
+    border-radius: 50%; 
+    width: 5px !important; 
+    height: 5px !important; 
+}
+
+.disp-responsive {
+    display: none;
+}
+
+/* for responsive navbar */
+@media only screen and (max-width: 991px) {
+
+    #account-icon {
+        display: none;
+    }
+
+    .disp-responsive {
+        display: block;
+    }
+
+    #find-hotel {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        background-color: #f7f7f7;
+        border: 1px solid #dddddd;
+        border-radius: 24px;
+        flex-wrap: wrap; 
+      }
+    
+      #find-hotel .mb-3 {
+        margin: 10px 0; 
+        flex: 1; 
+      }
+    
+      #find-hotel .form-control {
+        flex: 1; 
+      }
+
+      #sticky-form {
+        top: 5%;
+      }
+
+      #horizontal-line {
+        top: 13%;
+      }
+
+}
+
+
+
+
+  

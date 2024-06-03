@@ -1,0 +1,79 @@
+
+<h2>Add Hotel</h2>
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHotel">Add Hotel</button>
+
+<!-- Add Hotel Modal -->
+<div class="modal" id="addHotel">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Fill Hotel Details</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="/api/hotel/addHotel" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="coverImage" class="form-label">Cover Images</label>
+                        <input type="file" class="form-control" id="coverImage" name="imagesUrl" aria-describedby="coverImage" multiple required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="country" name="country" aria-describedby="country" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" class="form-control" id="state" name="state" aria-describedby="state" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city" aria-describedby="city" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="zipcode" class="form-label">Zip Code</label>
+                        <input type="text" class="form-control" id="zipcode" name="zipCode" aria-describedby="zipcode" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Facilities" class="form-label">Facilities</label>
+                        <textarea class="form-control" id="Facilities" name="facilities" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <table id="hotelTable" class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Actions</th> 
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Table body will be filled dynamically with hotel data -->
+        </tbody>
+    </table>
+</div>
+
+

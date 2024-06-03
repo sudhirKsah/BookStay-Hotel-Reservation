@@ -1,0 +1,18 @@
+[
+    {
+    "images": [
+        {
+            "pic": "lm.webp",
+            "alt": "lm pic1"
+        },
+        {
+            "pic": "lm2.webp",
+            "alt": "lm pic2"
+        },
+        {
+            "pic": "lm3.webp",
+            "alt": "lm pic3"
+        }
+    ]
+}
+]

@@ -1,0 +1,204 @@
+<div class="body-margin">
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">BookStay</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <div class="disp-responsive">
+            <% if(locals.user) { %>
+              <% if(locals.user.role==='guest' ) { %>
+                <li class="nav-item">
+                  <a href="/api/user/guestProfile" class="btn">Profile</a>
+                </li>
+                <% } else { %>
+
+                  <a href="/api/user/hotelOwnerProfile" class="btn">Profile</a>
+                  </li>
+                  <% } %>
+                    <li class="nav-item"></li>
+                    <button class="btn"><a href='/api/user/logout'>Log out</a></button>
+                    </li>
+                    <% } else { %>
+                      <li class="nav-item">
+                        <button class="btn" data-bs-toggle="modal" data-bs-target="#signup">Sign up</button>
+                      </li>
+                      <li class="nav-item">
+                        <button class="btn" data-bs-toggle="modal" data-bs-target="#login">Log in</button>
+                      </li>
+                      <% } %>
+          </div>
+
+          <li class="nav-item">
+            <div id="account-icon"> <a class="nav-link" href="#"><i class="bi bi-list">&nbsp;&nbsp;&nbsp;<i
+                    class="bi bi-person-circle"></i></i></a>
+            </div>
+            <div id="account-icon-click">
+              <% if(locals.user) { %>
+                <% if(locals.user.role==='guest' ) { %>
+                  <a href="/api/user/guestProfile" class="btn">Profile</a>
+                  <% } else { %>
+                    <a href="/api/user/hotelOwnerProfile" class="btn">Profile</a>
+                    <% } %>
+                      <button class="btn"><a href='/api/user/logout'>Log out</a></button>
+                      <% } else { %>
+                        <button class="btn" data-bs-toggle="modal" data-bs-target="#signup">Sign up</button>
+                        <button class="btn" data-bs-toggle="modal" data-bs-target="#login">Log in</button>
+                        <% } %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sign up Modal -->
+  <div class="modal" id="signup" data-show="<%= locals.showModal === 'signup' %>">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Sign up</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form id="signup-form" action="/api/user/register" method="post">
+            <!-- message if user alread exists -->
+            <% if (locals.message) { %>
+              <div class="alert alert-danger mt-3" role="alert">
+                <%= message %>
+              </div>
+            <% } %>
+            <div class="mb-3">
+              <label for="first-name" class="form-label">First Name</label>
+              <input type="text" class="form-control border border-black" id="first-name" name="firstName" required>
+            </div>
+            <div class="mb-3">
+              <label for="last-name" class="form-label">Last Name</label>
+              <input type="text" class="form-control border border-black" id="last-name" name="lastName" required>
+            </div>
+            <div class="mb-3">
+              <label for="signup-email" class="form-label">Email address</label>
+              <input type="email" class="form-control border border-black" id="signup-email" name="email"
+                aria-describedby="emailHelp" required>
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="signup-password" class="form-label">Password</label>
+              <input type="password" class="form-control border border-black" id="signup-password" name="password"
+                required>
+            </div>
+            <!-- message for weak password -->
+            <div id="passwordError" class="form-text text-danger"></div>
+            <div class="mb-3">
+              <label for="confirm-password" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control border border-black" id="confirm-password" required>
+            </div>
+            <!-- message if does not matches password -->
+            <div id="confirmPasswordError" class="form-text text-danger"></div>
+            <div class="mb-3 form-check">
+              <label class="form-label">Role</label>
+              <div class="form-check">
+                <input class="form-check-input border border-black" type="radio" value="guest" name="role" id="guest"
+                  checked>
+                <label class="form-check-label" for="guest">
+                  Guest
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input border border-black" type="radio" value="hotel-owner" name="role"
+                  id="hotel-owner">
+                <label class="form-check-label" for="hotel-owner">
+                  Hotel Owner
+                </label>
+              </div>
+
+              <input type="checkbox" class="form-check-input border border-black" id="t&c" required>
+              <label class="form-check-label" for="t&c">Agree Terms and Conditions</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+          </form>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="login" tabindex="-1" data-show="<%= locals.showModal === 'login' %>">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="/api/user/login" method="post">
+            <div class="mb-3">
+              <label for="login-email" class="form-label">Email address</label>
+              <input type="email" class="form-control border-2" id="login-email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control border-2" id="login-password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <!-- Error message for invalid input in login -->
+            <% if (locals.error) { %>
+              <div class="alert alert-danger mt-3" role="alert">
+                <%= error %>
+              </div>
+            <% } %>
+          </form>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search field, destination, check in and check out -->
+  <div id="sticky-form">
+    <form id="find-hotel">
+      <div class="mb-3">
+        <label for="destination" class="form-label">Where</label>
+        <input type="textfield" class="form-control" id="destination" placeholder="Search destinations"
+          aria-describedby="searchDestination">
+      </div>
+      <span class="vertical-separator"></span>
+      <div class="mb-3">
+        <label for="check-in" class="form-label">Check in</label>
+        <input type="date" class="form-control" id="check-in">
+      </div>
+      <span class="vertical-separator"></span>
+      <div class="mb-3">
+        <label for="check-out" class="form-label">Check out</label>
+        <input type="date" class="form-control" id="check-out">
+      </div>
+      <span class="vertical-separator"></span>
+      <div class="mb-3">
+        <label for="guests" class="form-label">Who</label>
+        <input type="textfield" class="form-control" id="guests" placeholder="Add guests" aria-describedby="guestField">
+      </div>
+      <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+    </form>
+  </div>
+  <div id="horizontal-line"></div>

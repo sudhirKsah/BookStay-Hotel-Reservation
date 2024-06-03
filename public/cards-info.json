@@ -1,0 +1,102 @@
+[
+    {
+        "id": "lm",
+        "images": [
+            {
+                "pic": "lm.webp",
+                "alt": "lm pic1"
+            },
+            {
+                "pic": "lm2.webp",
+                "alt": "lm pic2"
+            },
+            {
+                "pic": "lm3.webp",
+                "alt": "lm pic3"
+            }
+        ],
+        "locationTitle": "Langkawi, Malaysia",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem magnam numquam repellat, harum quae adipisci amet, commodi eum officia doloremque iusto fugiat id, animi at dignissimos. Quod accusantium quidem suscipit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, consequatur, voluptate explicabo quod natus exercitationem facere obcaecati temporibus voluptates quo labore voluptatibus, ipsa ad sequi officia eius porro beatae dolores?",
+        "price": "12,222"
+    },
+    {
+        "id": "ai",
+        "images": [
+            {
+                "pic": "ai.webp",
+                "alt": "ai pic1"
+            },
+            {
+                "pic": "ai2.webp",
+                "alt": "ai pic2"
+            },
+            {
+                "pic": "ai3.webp",
+                "alt": "ai pic3"
+            }
+        ],
+        "locationTitle": "Abiansemal, Indonesia",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem magnam numquam repellat, harum quae adipisci amet, commodi eum officia doloremque iusto fugiat id, animi at dignissimos. Quod accusantium quidem suscipit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, consequatur, voluptate explicabo quod natus exercitationem facere obcaecati temporibus voluptates quo labore voluptatibus, ipsa ad sequi officia eius porro beatae dolores?",
+        "price": "70,798"
+    },
+    {
+        "id": "enp",
+        "images": [
+            {
+                "pic": "enp.webp",
+                "alt": "enp pic1"
+            },
+            {
+                "pic": "enp2.webp",
+                "alt": "enp pic2"
+            },
+            {
+                "pic": "enp3.webp",
+                "alt": "enp pic3"
+            }
+        ],
+        "locationTitle": "El Nido, Philippiness",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem magnam numquam repellat, harum quae adipisci amet, commodi eum officia doloremque iusto fugiat id, animi at dignissimos. Quod accusantium quidem suscipit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, consequatur, voluptate explicabo quod natus exercitationem facere obcaecati temporibus voluptates quo labore voluptatibus, ipsa ad sequi officia eius porro beatae dolores?",
+        "price": "47,857"
+    },
+    {
+        "id": "pdp",
+        "images": [
+            {
+                "pic": "pdp.webp",
+                "alt": "pdp pic1"
+            },
+            {
+                "pic": "pdp2.webp",
+                "alt": "pdp pic2"
+            },
+            {
+                "pic": "pdp3.webp",
+                "alt": "pdp pic3"
+            }
+        ],
+        "locationTitle": "Ponta Delgada, Portugal",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem magnam numquam repellat, harum quae adipisci amet, commodi eum officia doloremque iusto fugiat id, animi at dignissimos. Quod accusantium quidem suscipit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, consequatur, voluptate explicabo quod natus exercitationem facere obcaecati temporibus voluptates quo labore voluptatibus, ipsa ad sequi officia eius porro beatae dolores?",
+        "price": "13,406"
+    },
+    {
+        "id": "rrr",
+        "images": [
+            {
+                "pic": "rrr.webp",
+                "alt": "rrr pic1"
+            },
+            {
+                "pic": "rrr2.webp",
+                "alt": "rrr pic2"
+            },
+            {
+                "pic": "rrr3.webp",
+                "alt": "rrr pic3"
+            }
+        ],
+        "locationTitle": "Rasnov Romacril, Romania",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem magnam numquam repellat, harum quae adipisci amet, commodi eum officia doloremque iusto fugiat id, animi at dignissimos. Quod accusantium quidem suscipit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, consequatur, voluptate explicabo quod natus exercitationem facere obcaecati temporibus voluptates quo labore voluptatibus, ipsa ad sequi officia eius porro beatae dolores?",
+        "price": "9,877"
+    }
+]
