@@ -35,6 +35,16 @@ app.get('/view/:view', (req, res) => {
     res.render(view);
 });
 
+// Isolate the /payment route to avoid middleware issues
+app.use('/api/hotel/payment', (req, res, next) => {
+    const { hotelId, roomId } = req.query;
+    if (!hotelId || !roomId) {
+        return res.status(400).render('error', { message: 'Missing hotelId or roomId' });
+    }
+    console.log(`Hotel ID: ${hotelId}, Room ID: ${roomId}`);
+    res.render('payment', { hotelId, roomId });
+});
+
 app.use('/api/user', userRoutes);
 app.use('/api/hotel', hotelRoutes);
 app.use('/api/booking', bookingRoutes);

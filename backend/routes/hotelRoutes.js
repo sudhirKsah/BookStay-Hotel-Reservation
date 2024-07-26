@@ -29,10 +29,16 @@ router.route('/rooms/:id')
     .delete(deleteRoom);
 
     // Route to render payment page
-router.get('/payment', (req, res) => {
-    const { hotelId, roomId } = req.query;
-    res.render('payment', { hotelId, roomId });
-});
+// router.get('/payment', (req, res) => {
+//     const { hotelId, roomId } = req.query;
+//     res.render('payment', { hotelId, roomId });
+// });
+
+// router.route('/payment').get((req, res) => {
+//     const {hotelId, roomId } = req.query;
+//     console.log(`Hotel ID: ${hotelId}, Room ID: ${roomId}`); // Add this line
+//     res.render('payment', { hotelId, roomId});
+// });
 
 // Route to process payment (for simplicity, we just print the form data)
 router.post('/process-payment', (req, res) => {
