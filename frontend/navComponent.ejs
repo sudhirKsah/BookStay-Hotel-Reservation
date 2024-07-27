@@ -77,55 +77,55 @@
               <div class="alert alert-danger mt-3" role="alert">
                 <%= message %>
               </div>
-            <% } %>
-            <div class="mb-3">
-              <label for="first-name" class="form-label">First Name</label>
-              <input type="text" class="form-control border border-black" id="first-name" name="firstName" required>
-            </div>
-            <div class="mb-3">
-              <label for="last-name" class="form-label">Last Name</label>
-              <input type="text" class="form-control border border-black" id="last-name" name="lastName" required>
-            </div>
-            <div class="mb-3">
-              <label for="signup-email" class="form-label">Email address</label>
-              <input type="email" class="form-control border border-black" id="signup-email" name="email"
-                aria-describedby="emailHelp" required>
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="signup-password" class="form-label">Password</label>
-              <input type="password" class="form-control border border-black" id="signup-password" name="password"
-                required>
-            </div>
-            <!-- message for weak password -->
-            <div id="passwordError" class="form-text text-danger"></div>
-            <div class="mb-3">
-              <label for="confirm-password" class="form-label">Confirm Password</label>
-              <input type="password" class="form-control border border-black" id="confirm-password" required>
-            </div>
-            <!-- message if does not matches password -->
-            <div id="confirmPasswordError" class="form-text text-danger"></div>
-            <div class="mb-3 form-check">
-              <label class="form-label">Role</label>
-              <div class="form-check">
-                <input class="form-check-input border border-black" type="radio" value="guest" name="role" id="guest"
-                  checked>
-                <label class="form-check-label" for="guest">
-                  Guest
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input border border-black" type="radio" value="hotel-owner" name="role"
-                  id="hotel-owner">
-                <label class="form-check-label" for="hotel-owner">
-                  Hotel Owner
-                </label>
-              </div>
+              <% } %>
+                <div class="mb-3">
+                  <label for="first-name" class="form-label">First Name</label>
+                  <input type="text" class="form-control border border-black" id="first-name" name="firstName" required>
+                </div>
+                <div class="mb-3">
+                  <label for="last-name" class="form-label">Last Name</label>
+                  <input type="text" class="form-control border border-black" id="last-name" name="lastName" required>
+                </div>
+                <div class="mb-3">
+                  <label for="signup-email" class="form-label">Email address</label>
+                  <input type="email" class="form-control border border-black" id="signup-email" name="email"
+                    aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="signup-password" class="form-label">Password</label>
+                  <input type="password" class="form-control border border-black" id="signup-password" name="password"
+                    required>
+                </div>
+                <!-- message for weak password -->
+                <div id="passwordError" class="form-text text-danger"></div>
+                <div class="mb-3">
+                  <label for="confirm-password" class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control border border-black" id="confirm-password" required>
+                </div>
+                <!-- message if does not matches password -->
+                <div id="confirmPasswordError" class="form-text text-danger"></div>
+                <div class="mb-3 form-check">
+                  <label class="form-label">Role</label>
+                  <div class="form-check">
+                    <input class="form-check-input border border-black" type="radio" value="guest" name="role"
+                      id="guest" checked>
+                    <label class="form-check-label" for="guest">
+                      Guest
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input border border-black" type="radio" value="hotel-owner" name="role"
+                      id="hotel-owner">
+                    <label class="form-check-label" for="hotel-owner">
+                      Hotel Owner
+                    </label>
+                  </div>
 
-              <input type="checkbox" class="form-check-input border border-black" id="t&c" required>
-              <label class="form-check-label" for="t&c">Agree Terms and Conditions</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign up</button>
+                  <input type="checkbox" class="form-check-input border border-black" id="t&c" required>
+                  <label class="form-check-label" for="t&c">Agree Terms and Conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign up</button>
           </form>
         </div>
         <!-- Modal footer -->
@@ -138,7 +138,7 @@
 
   <!-- Login Modal -->
   <div class="modal" id="login" tabindex="-1" data-show="<%= locals.showModal === 'login' %>">
-  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
 
         <!-- Modal Header -->
@@ -164,7 +164,7 @@
               <div class="alert alert-danger mt-3" role="alert">
                 <%= error %>
               </div>
-            <% } %>
+              <% } %>
           </form>
         </div>
         <!-- Modal footer -->

@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('.nav-link');
+    const links = document.querySelectorAll('.sidebar .nav-link');
     const content = document.getElementById('content');
 
     const loadContent = async (section) => {
         try {
+            console.log(section);
+            console.log(`/view/${section}.ejs`)
             const response = await fetch(`/view/${section}.ejs`);
             const text = await response.text();
             content.innerHTML = text;
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const section = link.getAttribute('data-section');
+            console.log(section);
             loadContent(section);
             links.forEach(link => link.classList.remove('active'));
             link.classList.add('active');

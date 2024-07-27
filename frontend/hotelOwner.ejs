@@ -28,6 +28,31 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
+                        <div class="disp-responsive">
+                            <% if(locals.user) { %>
+                                <% if(locals.user.role==='guest' ) { %>
+                                    <li class="nav-item">
+                                        <a href="/api/user/guestProfile" class="btn">Profile</a>
+                                    </li>
+                                    <% } else { %>
+
+                                        <a href="/api/user/hotelOwnerProfile" class="btn">Profile</a>
+                                        </li>
+                                        <% } %>
+                                            <li class="nav-item"></li>
+                                            <button class="btn"><a href='/api/user/logout'>Log out</a></button>
+                                            </li>
+                                            <% } else { %>
+                                                <li class="nav-item">
+                                                    <button class="btn" data-bs-toggle="modal"
+                                                        data-bs-target="#signup">Sign up</button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <button class="btn" data-bs-toggle="modal"
+                                                        data-bs-target="#login">Log in</button>
+                                                </li>
+                                                <% } %>
+                        </div>
                         <li class="nav-item">
                             <div id="account-icon"> <a class="nav-link" href="#"><i
                                         class="bi bi-list">&nbsp;&nbsp;&nbsp;<i class="bi bi-person-circle"></i></i></a>
@@ -164,16 +189,16 @@
                     <!-- <div class="sidebar-sticky"> -->
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#" data-section="dashboard">Dashboard</a>
+                            <a class="sidebar nav-link active" href="#" data-section="dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-section="addRooms">Rooms</a>
+                            <a class="sidebar nav-link" href="#" data-section="addRooms">Rooms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-section="addHotels">Hotel</a>
+                            <a class="sidebar nav-link" href="#" data-section="addHotels">Hotel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-section="details">Details</a>
+                            <a class="sidebar nav-link" href="#" data-section="details">Details</a>
                         </li>
                     </ul>
                     <!-- </div> -->
