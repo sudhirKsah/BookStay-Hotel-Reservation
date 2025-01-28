@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = await response.text();
             content.innerHTML = text;
 
-            // Execute additional scripts based on the section loaded
             if (section === 'addHotels') {
                 fetchHotelData();
             }
@@ -67,7 +66,9 @@ async function fetchHotelData() {
             } else if (event.target.classList.contains('add-room-btn')) {
                 openAddRoomModal(hotelId);
             } else if (event.target.classList.contains('delete-btn')) {
-                deleteHotel(hotelId);
+                if (confirm('Do you want to delete this hotel?')) {
+                    deleteHotel(hotelId);
+                }
             }
         });
     } catch (error) {
@@ -76,7 +77,7 @@ async function fetchHotelData() {
 }
 
 function openEditModal(hotelId) {
-    fetch(`/api/hotel/updateHotel/${hotelId}`)
+    fetch(`/api/hotel/editHotel/getHotel/${hotelId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -93,11 +94,49 @@ function openEditModal(hotelId) {
             document.getElementById('editHotelFacilities').value = hotel.facilities;
             document.getElementById('editHotelId').value = hotel._id;
             
+            // document.getElementById('editHotelForm').action = `/api/hotel/updateHotel/${hotel._id}`;
+
             const editHotelModal = new bootstrap.Modal(document.getElementById('editHotelModal'));
             editHotelModal.show();
         })
         .catch(error => console.error('Error:', error));
 }
+
+document.getElementById('editHotelForm').addEventListener('submit', (event) => {
+    event.preventDefault(); 
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch(`/api/hotel/updateHotel/${data.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(result => {
+            console.log('Update result:', result);
+
+            if (result.message === 'Hotel updated successfully!') {
+                alert('Hotel updated successfully!');
+              
+                const editHotelModal = bootstrap.Modal.getInstance(document.getElementById('editHotelModal'));
+                editHotelModal.hide();
+
+                location.reload();
+            } else {
+                alert('Failed to update hotel.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to update hotel.');
+        });
+});
+
+
+
 
 
 
@@ -117,6 +156,6 @@ function openAddRoomModal(hotelId) {
 
 function deleteHotel(hotelId) {
     fetch(`/api/hotel/deleteHotel/${hotelId}`, { method: 'DELETE' })
-        .then(() => location.reload())  // Reload the page after successful deletion
+        .then(() => location.reload())
         .catch(error => console.error('Error:', error));
 }

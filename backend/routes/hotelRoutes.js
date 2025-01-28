@@ -2,6 +2,7 @@ const express = require('express');
 const {
     listHotels,
     getHotelDetails,
+    editHotelDetails,
     addHotel,
     updateHotel,
     deleteHotel,
@@ -16,10 +17,13 @@ const router = express.Router();
 
 router.route('/').get(listHotels);
 router.route('/ownerHotel').get(findHotel);
+router.get('/editHotel/getHotel/:id', editHotelDetails);
 router.route('/:id').get(getHotelDetails, listRooms);
 // router.route('/:id/rooms').get(listRooms);
 router.route('/addHotel').post(upload.array('imagesUrl', 10), addHotel);
+
 router.put('/updateHotel/:id', updateHotel);
+
 router.route('/deleteHotel/:id').delete(deleteHotel);
 
 

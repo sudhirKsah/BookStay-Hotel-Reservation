@@ -45,12 +45,13 @@ app.use('/api/hotel/payment', (req, res, next) => {
     res.render('payment', { hotelId, roomId });
 });
 
+
 app.use('/api/user', userRoutes);
 app.use('/api/hotel', hotelRoutes);
 app.use('/api/booking', bookingRoutes);
 app.use('/api/review', reviewRoutes);
 
-// Error handling middleware
+
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(err.status || 500).render('error', { message: err.message || 'Internal Server Error' });

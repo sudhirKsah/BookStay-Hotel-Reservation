@@ -45,7 +45,7 @@ const displayHotelsOnCards = (hotels) => {
                     <img src="${image}" class="d-block w-100">
                 </div>
                 `;
-    }).join(''); // Join the HTML strings into a single string
+    }).join('');
     var cardDisplay = `
     <div class="col">
       <div class="card h-100">
@@ -91,7 +91,7 @@ function validatePassword() {
   const confirmPassword = document.getElementById('confirm-password').value;
   const passwordError = document.getElementById('passwordError');
   const confirmPasswordError = document.getElementById('confirmPasswordError');
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#`~$!%*?&])[A-Za-z\d@#`~$!%*?&]{8,}$/;
 
   if (!passwordRegex.test(signupPassword)) {
     passwordError.textContent = 'Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, a number, and a special character.';
@@ -118,7 +118,6 @@ document.getElementById('signup-form').addEventListener('submit', function(event
 
 
 
-// for showing modal with error message
 document.addEventListener('DOMContentLoaded', (event) => {
   const loginModal = document.querySelector('#login');
   const signupModal = document.querySelector('#signup');

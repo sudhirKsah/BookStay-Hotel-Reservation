@@ -1,22 +1,27 @@
-
 <h2>Add Hotel</h2>
 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHotel">Add Hotel</button>
 
-<!-- Add Hotel Modal -->
+
 <div class="modal" id="addHotel">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
-            <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Fill Hotel Details</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <!-- Modal body -->
             <div class="modal-body">
                 <form action="/api/hotel/addHotel" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="coverImage" class="form-label">Cover Images</label>
-                        <input type="file" class="form-control" id="coverImage" name="imagesUrl" aria-describedby="coverImage" multiple required>
+                        <!-- <label for="coverImage" class="form-label">Cover Images</label>
+                        <input type="file" placeholder="Multiple Images (less than 1MB)" class="form-control" id="coverImage" name="imagesUrl" aria-describedby="coverImage" multiple required>
+                    </div> -->
+                        <label for="coverImage" class="form-label">Upload Images (less than 1MB each)</label>
+                        <input type="file" class="form-control" id="coverImage" name="imagesUrl"
+                            aria-describedby="coverImageHelp" multiple required
+                            title="Select multiple images under 1MB each">
+                        <small id="coverImageHelp" class="form-text text-muted">You can upload multiple images under 1MB
+                            each.</small>
+
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
@@ -24,11 +29,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country" name="country" aria-describedby="country" required>
+                        <input type="text" class="form-control" id="country" name="country" aria-describedby="country"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="state" class="form-label">State</label>
-                        <input type="text" class="form-control" id="state" name="state" aria-describedby="state" required>
+                        <input type="text" class="form-control" id="state" name="state" aria-describedby="state"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="city" class="form-label">City</label>
@@ -36,7 +43,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="zipcode" class="form-label">Zip Code</label>
-                        <input type="text" class="form-control" id="zipcode" name="zipCode" aria-describedby="zipcode" required>
+                        <input type="text" class="form-control" id="zipcode" name="zipCode" aria-describedby="zipcode"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
@@ -51,7 +59,6 @@
                     </div>
                 </form>
             </div>
-            <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             </div>
@@ -67,7 +74,7 @@
                 <th>Country</th>
                 <th>State</th>
                 <th>City</th>
-                <th>Actions</th> 
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody id="tableBody">
@@ -75,5 +82,3 @@
         </tbody>
     </table>
 </div>
-
-
