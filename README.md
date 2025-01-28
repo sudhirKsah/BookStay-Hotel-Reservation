@@ -1,7 +1,7 @@
-# BookStay [Visit BookStay](https://bookstay-hotel-reservation.onrender.com)
+# [BookStay](https://bookstay-hotel-reservation.onrender.com)
 This is a hotel reservation website using html, css, javascript, ejs, node.js and mongodb.
 
-BookStay is a dynamic web application designed to simplify hotel reservations for users. It offers an intuitive interface for users to browse and book hotel rooms, while providing robust hotel management features for administrators. With seamless data handling and an interactive design, BookStay ensures an efficient and user-friendly experience for all.
+[BookStay](https://bookstay-hotel-reservation.onrender.com) is a dynamic web application designed to simplify hotel reservations for users. It offers an intuitive interface for users to browse and book hotel rooms, while providing robust hotel management features for administrators. With seamless data handling and an interactive design, BookStay ensures an efficient and user-friendly experience for all.
 
 ---
 
