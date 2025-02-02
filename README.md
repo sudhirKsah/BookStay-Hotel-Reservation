@@ -56,7 +56,7 @@ Follow the steps below to run the project locally:
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/sudhirKsah/BookStay-Hotel-Reservation
+    git clone https://github.com/sudhirKsah/BookStay-Hotel-Reservation.git
     cd BookStay-Hotel-Reservation
     ```
 
